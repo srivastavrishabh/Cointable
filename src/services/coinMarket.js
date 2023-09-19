@@ -7,7 +7,7 @@ export const getTokenList = async () => {
 
   const requestOptions = {
     method: "GET",
-    headers: myHeaders,
+    headers: myHeaders
   };
 
   try {
