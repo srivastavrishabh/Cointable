@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./styles.css";
 import { getTokenList } from "./services/coinMarket";
 import Table from "./Table";
 
