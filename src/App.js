@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./styles.css";
+import { getTokenList } from "./services/coinMarket";
+import Table from "./Table";
 
-function App() {
+export default function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchAllToken = async () => {
+      const response = await getTokenList();
+      if (response) {
+        setData(response.data);
+      }
+    };
+    fetchAllToken();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <Table data={data.slice(0, 10)} colToShow={["name", "symbol"]} />
     </div>
   );
 }
-
-export default App;
