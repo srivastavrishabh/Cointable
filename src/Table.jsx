@@ -1,5 +1,8 @@
 import React from "react";
-
+const heading= {
+    name: "Name",
+    symbol: "Symbol",
+}
 const Table = ({ data, colToShow }) => {
   if (!data || data.length === 0) {
     return <p>No data to display</p>;
@@ -10,7 +13,7 @@ const Table = ({ data, colToShow }) => {
       <thead>
         <tr>
           {colToShow.map((column, index) => (
-            <th key={index}>{column}</th>
+            <th key={index}>{heading[column]}</th>
           ))}
         </tr>
       </thead>

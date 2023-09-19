@@ -16,8 +16,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>Crypto Currency With Symbol</h1>
       <Table data={data.slice(0, 10)} colToShow={["name", "symbol"]} />
     </div>
   );
